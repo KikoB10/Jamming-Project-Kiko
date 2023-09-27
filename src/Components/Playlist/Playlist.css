@@ -1,0 +1,26 @@
+.Playlist {
+  width: 45%;
+  border: 1px solid #f4f6f7;
+  border-radius: 8px;
+  padding: 0.88rem;
+  max-height: 650px;
+  overflow-y: scroll;
+  background-color: transparent;
+  color: #8860d0;
+}
+
+.Playlist h2 {
+  background-color: #8860d0;
+  color: #f4f6f7;
+  border-radius: 8px;
+}
+
+.Playlist button {
+  color: #f4f6f7;
+  border: 1px solid #5680e9;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #5ab9ea;
+  padding: 0.5rem 0.5rem;
+}

@@ -1,10 +1,11 @@
 import React from "react";
 import Tracklist from "../Tracklist/Tracklist";
+import "./Playlist.css";
 
 function Playlist() {
   return (
-    <div>
-      <h1>Playlist Component</h1>
+    <div className="Playlist">
+      <h2>Songs added</h2>
       <Tracklist />
       <button>Save to Spotify</button>
     </div>
