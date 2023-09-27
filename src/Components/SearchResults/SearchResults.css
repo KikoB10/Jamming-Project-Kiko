@@ -13,6 +13,7 @@
   background-color: #8860d0;
   color: #f4f6f7;
   border-radius: 8px;
+  padding: 0.3rem;
 }
 
 ::-webkit-scrollbar {

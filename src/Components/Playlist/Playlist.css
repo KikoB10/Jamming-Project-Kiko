@@ -13,7 +13,21 @@
   background-color: #8860d0;
   color: #f4f6f7;
   border-radius: 8px;
+  padding: 0.3rem;
 }
+
+.Playlist input {
+  width: 75%;
+  padding: 0.5rem 0;
+  color:#5680e9;
+  border: 1px solid #f4f6f7;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  background-color:#f4f6f7;
+}
+
 
 .Playlist button {
   color: #f4f6f7;
@@ -24,3 +38,17 @@
   background-color: #5ab9ea;
   padding: 0.5rem 0.5rem;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+@media only screen and (max-width: 1020px {
+  .Playlist {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+})
+
+
