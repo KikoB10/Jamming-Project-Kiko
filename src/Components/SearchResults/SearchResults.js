@@ -1,9 +1,12 @@
 import React from "react";
+import "./SearchResults.css";
+import Tracklist from "../Tracklist/Tracklist";
 
 function SearchResults() {
   return (
-    <div>
-      <h1>SearchResults Component</h1>
+    <div className="SearchResults">
+      <h2>Results</h2>
+      <Tracklist />
     </div>
   );
 }
