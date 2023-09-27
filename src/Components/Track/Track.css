@@ -1,0 +1,34 @@
+.Track {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1 px solid #c1c8e4;
+  border-radius: 8px;
+  background-color: #5680e9;
+  color: #84ceeb;
+  width: 100%;
+}
+
+.Track-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0.25rem;
+  padding: 0.2rem;
+}
+
+.plus-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0.25rem 0;
+}
+
+.Track-info p {
+  font-weight: 200;
+}

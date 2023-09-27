@@ -1,10 +1,10 @@
 import React from "react";
 import Track from "../Track/Track";
+import "./Tracklist.css";
 
 function Tracklist() {
   return (
-    <div>
-      <h1>Tracklist Component</h1>
+    <div className="Tracklist">
       <Track />
     </div>
   );
