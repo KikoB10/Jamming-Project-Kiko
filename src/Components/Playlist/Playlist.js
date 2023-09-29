@@ -9,7 +9,7 @@ function Playlist() {
 
       <Tracklist />
       <div className="Playlist-name">
-        <input placeholder="Enter unique playlist name" />
+        <input placeholder="Enter playlist name" />
       </div>
       <button>Save to Spotify</button>
     </div>
