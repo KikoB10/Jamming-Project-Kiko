@@ -31,8 +31,14 @@ function App() {
     Spotify.getAuth();
   };
 
-  const handleSearch = () => {
-    console.log("search");
+  const handleSearch = (searchInput) => {
+    Spotify.searchTracks(searchInput)
+      .then((tracksArray) => {
+        setSearchResults(tracksArray);
+      })
+      .catch((error) => {
+        console.error("Error searching tracks", error);
+      });
   };
 
   if (!logged) {

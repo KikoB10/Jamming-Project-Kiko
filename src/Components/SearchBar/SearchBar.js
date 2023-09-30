@@ -15,8 +15,7 @@ function SearchBar(props) {
       //the other guy has I think to store the current search term in the browser
       //sessionStorage.setItem("searchTerm", searchTerm);
 
-      //why do I need the 'this' here?
-      this.props.handleSearch(searchTerm);
+      props.handleSearch(searchTerm);
       setSearchTerm("");
     }
   };

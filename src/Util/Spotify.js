@@ -1,7 +1,8 @@
-const CLIENT_ID =
+const CLIENT_ID = 
 const REDIRECT_URI = "http://localhost:3002/";
 let accessToken;
 let userId;
+// let userImg;
 
 const Spotify = {
   //redirect user to Spotify Auth page when login button is clicked
@@ -44,6 +45,7 @@ const Spotify = {
       .then((data) => {
         const userName = data.display_name;
         userId = data.id;
+        // const userImg = data.images[0];
         return userName;
       });
   },
@@ -59,6 +61,7 @@ const Spotify = {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         const trackResults = data.tracks.items.map((track) => ({
           id: track.id,
           name: track.name,

@@ -1,13 +1,15 @@
 import React from "react";
 import "./Track.css";
 
-function Track() {
+function Track(props) {
   return (
     <div>
       <div className="Track">
         <div className="Track-info">
-          <h3>track name 1</h3>
-          <p>track artist | track album</p>
+          <h3>{props.track.name}</h3>
+          <p>
+            {props.track.artist} | {props.track.album}
+          </p>
         </div>
         <div className="plus-icon">
           <p>+</p>
