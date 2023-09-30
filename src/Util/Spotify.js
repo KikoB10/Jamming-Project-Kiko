@@ -1,6 +1,6 @@
-const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
-const CLIENT_SECRET = "727935eaec5946139c919d99b79a22f5";
-const REDIRECT_URI = "http://localhost:3000/";
+// const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
+// const CLIENT_SECRET = "727935eaec5946139c919d99b79a22f5";
+const REDIRECT_URI = "http://localhost:3002/";
 let accessToken;
 let userId;
 
@@ -119,36 +119,4 @@ const Spotify = {
       });
   },
 };
-
-const [searchInput, setSearchInput] = useState("");
-const [accessToken, setAccessToken] = useState("");
-const [track, setTrack] = useState([]);
-const [artist, setArtist] = useState([]);
-const [album, setAlbum] = useState([]);
-
-//in order to initialize, we need useEffect and be very Spotify specific to make the access token request.
-//Save those specific rules that Spotify needs into authParameters
-//remember the fetch request gives a promise, so the .then waits for th epromise to be fulfilled in order to do something with the results
-
-//set up access token
-useEffect(() => {
-  const authParameters = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
-  };
-
-  fetch("https://accounts.spotify.com/api/token", authParameters)
-    .then((result) => result.json())
-    .then((data) => setAccessToken(data.access_token));
-}, []);
-
-//setup Search function
-//search is an async function -> it is going to have a lot of different fetch statements.
-async function search() {
-  console.log(`Search for ${searchInput}`);
-}
-
-export default { search };
+export default Spotify;
