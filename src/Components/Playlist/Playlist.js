@@ -1,6 +1,7 @@
 import React from "react";
 import Tracklist from "../Tracklist/Tracklist";
 import "./Playlist.css";
+import spotifyLogo from "./spotify-logo-small.png";
 
 function Playlist() {
   return (
@@ -11,7 +12,14 @@ function Playlist() {
       <div className="Playlist-name">
         <input placeholder="Enter playlist name" />
       </div>
-      <button>Save to Spotify</button>
+      <button>
+        <p>Save to Spotify </p>
+        <img
+          className="spotifyLogo"
+          src={spotifyLogo}
+          alt="pink spotify logo"
+        />
+      </button>
     </div>
   );
 }

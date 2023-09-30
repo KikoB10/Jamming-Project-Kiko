@@ -68,6 +68,7 @@ function App() {
           Kiko's Ja<span className="highlight">mmm</span>ing Project
         </h1>
         <div className="App">
+          <h2 className="userName">Hello! {userName}</h2>
           <SearchBar handleSearch={handleSearch} />
           <div className="App-playlist">
             <SearchResults searchResultsList={searchResults} />

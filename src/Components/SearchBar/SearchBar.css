@@ -26,4 +26,16 @@
   font-size: 1rem;
   background-color: #5680e9;
   padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.SearchBar button:hover {
+  background-color: #8860d0;
+}
+
+.searchButtonSpotifyLogo {
+  height: 1.5rem;
+  width: 1.5rem;
+  justify-content: space-around;
 }

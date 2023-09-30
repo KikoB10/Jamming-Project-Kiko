@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
+import spotifyLogo from "./spotify-logo-small.png";
 
 function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,7 +31,12 @@ function SearchBar(props) {
       />
 
       <button className="SearchButton" type="submit">
-        SEARCH
+        <p className="buttonText">SEARCH</p>
+        <img
+          className="searchButtonSpotifyLogo"
+          src={spotifyLogo}
+          alt="pink spotify logo"
+        />
       </button>
     </form>
   );

@@ -105,6 +105,12 @@ h1 .highlight {
   color: #ffff;
 }
 
+.userName {
+  color: #f4f6f7;
+  background-color: #5680e9;
+  padding: 0.3rem;
+  margin: 1rem;
+}
 .App-playlist {
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,4 @@
-const CLIENT_ID = 
-
+const CLIENT_ID =
 const REDIRECT_URI = "http://localhost:3002/";
 let accessToken;
 let userId;
