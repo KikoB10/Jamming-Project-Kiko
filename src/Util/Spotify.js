@@ -1,5 +1,5 @@
-// const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
-// const CLIENT_SECRET = "727935eaec5946139c919d99b79a22f5";
+const CLIENT_ID = 
+
 const REDIRECT_URI = "http://localhost:3002/";
 let accessToken;
 let userId;
@@ -7,7 +7,7 @@ let userId;
 const Spotify = {
   //redirect user to Spotify Auth page when login button is clicked
   getAuth() {
-    const tokenURL = `https://accounts.spotify.com/authorization?client_id=${CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${REDIRECT_URI}`;
+    const tokenURL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${REDIRECT_URI}`;
     window.location = tokenURL;
   },
 
@@ -28,7 +28,7 @@ const Spotify = {
       return Promise.reject(new Error(`Access token is missing!`));
     }
 
-    const nameEndPoint = `https://api.apotify.com/v1/me`;
+    const nameEndPoint = `https://api.spotify.com/v1/me`;
     return fetch(nameEndPoint, {
       method: "GET",
       headers: {
