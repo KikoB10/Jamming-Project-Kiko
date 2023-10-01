@@ -83,6 +83,11 @@ function App() {
       });
   };
 
+  const viewPlaylists = () => {
+    // Spotify.viewPlaylists();
+    return console.log("viewPlaylist from spotify called");
+  };
+
   if (!logged) {
     return (
       <div className="container">
@@ -125,6 +130,7 @@ function App() {
               onChangeName={changePlaylistName}
               onSave={savePlaylist}
               onRemove={removeSong}
+              onView={viewPlaylists}
             />
           </div>
         </div>

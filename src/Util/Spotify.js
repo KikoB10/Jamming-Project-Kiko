@@ -1,7 +1,9 @@
-const CLIENT_ID = process.env.REACT_APP_API_CLIENT_ID;
+// const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
 const REDIRECT_URI = "http://localhost:3002/";
 
 let accessToken;
+
 let userId;
 // let userImg;
 
@@ -29,7 +31,7 @@ const Spotify = {
     }
   },
 
-  getUserName() {
+  async getUserName() {
     if (!accessToken) {
       return Promise.reject(new Error(`Access token is missing!`));
     }
@@ -51,7 +53,8 @@ const Spotify = {
       .then((data) => {
         const userName = data.display_name;
         userId = data.id;
-        // const userImg = data.images[0];
+        // userImg = data.images[0];
+
         return userName;
       });
   },
@@ -92,8 +95,6 @@ const Spotify = {
       name: playlistName,
     };
 
-    //first send the new playlistName to spotify
-
     return fetch(createListURL, {
       method: "POST",
       headersObject,
@@ -125,5 +126,9 @@ const Spotify = {
           });
       });
   },
+
+  // async viewPlaylists() {
+  //   const viewPlaylistsURL = `https://api.spotify.com/v1/me/playlists`;
+  // },
 };
 export default Spotify;

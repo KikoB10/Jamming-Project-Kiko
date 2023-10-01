@@ -34,15 +34,13 @@
 }
 
 
-.saveSpotify-button {
+button {
 
-  padding: .5rem .5rem;
+  padding: .3rem .3rem;
   color: #f4f6f7;
   border: 1px solid #5680e9;
   border-radius: 8px;
   text-align:center;
-  background-color: #5ab9ea;
-  align-items: center;
   font-size: .95rem;
   display: flex;
   justify-content: space-evenly;
@@ -50,7 +48,12 @@
 }
 
 button:hover {
-  background-color: #5680e9;
+  background-color: #5680e9 !important;
+ 
+}
+
+.viewPlaylists-button {
+  margin-top: .3rem;
 }
 
 .spotifyLogo {

@@ -38,6 +38,19 @@ function Playlist(props) {
           alt="pink spotify logo"
         />
       </button>
+
+      <button
+        className="viewPlaylists-button"
+        style={{ backgroundColor: "#5ab9ea" }}
+        onClick={props.onView}
+      >
+        <p>View Saved Playlists </p>
+        <img
+          className="spotifyLogo"
+          src={spotifyLogo}
+          alt="pink spotify logo"
+        />
+      </button>
     </div>
   );
 }

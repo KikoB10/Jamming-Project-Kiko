@@ -43,8 +43,12 @@ h1 .highlight {
   color: #5680e9;
 }
 
+/* button container */
 .buttonContainer {
   margin: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .spotifyLogo {
