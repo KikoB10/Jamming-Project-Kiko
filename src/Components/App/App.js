@@ -8,8 +8,9 @@ import Playlist from "../Playlist/Playlist";
 
 function App() {
   const [logged, setLogged] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
   const [userName, setUserName] = useState("");
+
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const authenticated = Spotify.checkAuth();
@@ -77,7 +78,7 @@ function App() {
           <h2 className="userName">Hello! {userName}</h2>
           <SearchBar handleSearch={handleSearch} />
           <div className="App-playlist">
-            <SearchResults searchResultsList={searchResults} />
+            <SearchResults searchResults={searchResults} />
             <Playlist />
           </div>
         </div>

@@ -3,12 +3,16 @@ import "./SearchResults.css";
 import Tracklist from "../Tracklist/Tracklist";
 
 function SearchResults(props) {
-  return (
-    <div className="SearchResults">
-      <h2>Results</h2>
-      <Tracklist tracks={props.searchResults} />
-    </div>
-  );
+  if (props.searchResults) {
+    return (
+      <div className="SearchResults">
+        <h2>Results</h2>
+        <Tracklist tracks={props.searchResults} />
+      </div>
+    );
+  } else {
+    return <p>Submit a search</p>;
+  }
 }
 
 export default SearchResults;

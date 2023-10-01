@@ -1,5 +1,4 @@
-const CLIENT_ID = 
-const REDIRECT_URI = "http://localhost:3002/";
+const CLIENT_ID =
 let accessToken;
 let userId;
 // let userImg;
@@ -70,6 +69,7 @@ const Spotify = {
           image: track.album.images[0].url,
           uri: track.uri,
         }));
+        console.log(trackResults);
         return trackResults;
       });
   },

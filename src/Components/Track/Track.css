@@ -1,32 +1,40 @@
-.Track {
+.track-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  border-bottom: 1 px solid #c1c8e4;
+  border: 1px solid #c1c8e4;
   border-radius: 8px;
   background-color: #5680e9;
   color: #84ceeb;
   width: 100%;
+  height: 2.5rem;
+}
+.track-image {
+  height: 100%;
+  border-radius: 7px;
 }
 
-.Track-info {
+.track-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  margin: 0.25rem;
-  padding: 0.2rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.plus-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  margin: 0.25rem 0;
+h3 .track-info {
+  text-overflow: ellipsis;
+}
+.save-button {
+  margin-right: 0.3rem;
+  color: #f4f6f7;
+}
+
+.save-button:hover {
+  color: #84ceeb;
 }
 
 .Track-info p {
