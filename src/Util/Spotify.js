@@ -82,10 +82,10 @@ const Spotify = {
       });
   },
 
-  createPlaylist(listName, urisArray) {
+  createPlaylist(playlistName, urisArray) {
     const createListURL = `https://api.spotify.com/v1/users/${userId}/playlists`;
     const playlistData = {
-      name: listName,
+      name: playlistName,
     };
     return fetch(createListURL, {
       method: "POST",

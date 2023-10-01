@@ -12,6 +12,7 @@ function App() {
 
   const [searchResults, setSearchResults] = useState([]);
   const [newList, setNewList] = useState([]);
+  const [playlistName, setPlaylistName] = useState("");
 
   //using useEffect to check for the accessToken on every render.
   useEffect(() => {
@@ -53,6 +54,26 @@ function App() {
     console.log(newList);
   };
 
+  const changePlaylistName = (name) => {
+    setPlaylistName(name);
+    console.log(playlistName);
+  };
+
+  const savePlaylist = () => {
+    const urisArray = newList.map((track) => track.uri);
+    Spotify.createPlaylist(playlistName, urisArray)
+      .then((response) => {
+        if (response) {
+          alert("Playlist saved!");
+          setNewList([]);
+          setPlaylistName("");
+        }
+      })
+      .catch((error) => {
+        console.error("Error saving playlist", error);
+      });
+  };
+
   if (!logged) {
     return (
       <div className="container">
@@ -90,7 +111,11 @@ function App() {
           <SearchBar handleSearch={handleSearch} />
           <div className="App-playlist">
             <SearchResults searchResults={searchResults} onAdd={addSong} />
-            <Playlist list={newList} />
+            <Playlist
+              list={newList}
+              onChangeName={changePlaylistName}
+              onSave={savePlaylist}
+            />
           </div>
         </div>
         <footer className="footer">
