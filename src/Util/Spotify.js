@@ -1,5 +1,4 @@
-const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
-const CLIENT_SECRET = "727935eaec5946139c919d99b79a22f5";
+const CLIENT_ID = process.env.REACT_APP_API_CLIENT_ID;
 const REDIRECT_URI = "http://localhost:3002/";
 
 let accessToken;
