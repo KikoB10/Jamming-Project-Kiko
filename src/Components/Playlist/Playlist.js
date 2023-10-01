@@ -12,12 +12,18 @@ function Playlist(props) {
     <div className="Playlist">
       <h2>Songs added</h2>
 
-      <Tracklist tracks={props.list} />
+      <Tracklist
+        tracks={props.list}
+        onClick={props.onRemove}
+        btnAction="-"
+        inPlaylist={true}
+      />
       <div className="Playlist-name">
         <input
           placeholder="Enter playlist name"
           onChange={handleChange}
           value={props.playlistName}
+          id="playlist-name"
         />
       </div>
       <button

@@ -2,9 +2,9 @@ import React from "react";
 import "./Track.css";
 
 function Track(props) {
-  const handleAdd = (e) => {
-    console.log(`${props.track.name} add button clicked`);
-    props.onAdd(props.track);
+  const handleClick = (e) => {
+    console.log(`${props.track.name} button clicked`);
+    props.onClick(props.track);
   };
 
   return (
@@ -22,8 +22,8 @@ function Track(props) {
           </p>
         </div>
 
-        <button className="save-button" onClick={handleAdd}>
-          +
+        <button className="save-button" onClick={handleClick}>
+          {props.btnAction}
         </button>
       </div>
     </div>

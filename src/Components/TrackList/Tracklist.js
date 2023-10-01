@@ -6,7 +6,15 @@ function Tracklist(props) {
   return (
     <div className="Tracklist">
       {props.tracks?.map((track) => {
-        return <Track track={track} key={track.id} onAdd={props.onAdd} />;
+        return (
+          <Track
+            track={track}
+            key={track.id}
+            onClick={props.onClick}
+            btnAction={props.btnAction}
+            inPlaylist={props.inPlaylist}
+          />
+        );
       })}
     </div>
   );

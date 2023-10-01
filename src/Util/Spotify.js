@@ -82,25 +82,26 @@ const Spotify = {
       });
   },
 
-  createPlaylist(playlistName, urisArray) {
+  async createPlaylist(playlistName, urisArray) {
     const createListURL = `https://api.spotify.com/v1/users/${userId}/playlists`;
+    const headersObject = {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    };
+
     const playlistData = {
       name: playlistName,
     };
+
+    //first send the new playlistName to spotify
+
     return fetch(createListURL, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
+      headersObject,
       body: JSON.stringify(playlistData),
     })
       .then((response) => {
-        if (response.status === 201) {
-          return response.json();
-        } else {
-          throw new Error("Failed to create playlist");
-        }
+        return response.json();
       })
       .then((data) => {
         const playlistId = data.id;
@@ -112,10 +113,7 @@ const Spotify = {
 
         return fetch(addTracksURL, {
           method: "POST",
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": "application/json",
-          },
+          headersObject,
           body: JSON.stringify(tracksToAdd),
         })
           .then((response) => response.json())

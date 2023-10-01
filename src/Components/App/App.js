@@ -47,11 +47,19 @@ function App() {
       });
   };
 
-  //--Adding songs
+  //---
 
   const addSong = (track) => {
     setNewList((prev) => [...prev, track]);
     console.log(newList);
+  };
+
+  //----
+
+  const removeSong = (track) => {
+    setNewList((prevList) =>
+      prevList.filter((currentTrack) => currentTrack.id !== track.id)
+    );
   };
 
   const changePlaylistName = (name) => {
@@ -64,9 +72,10 @@ function App() {
     Spotify.createPlaylist(playlistName, urisArray)
       .then((response) => {
         if (response) {
+          setPlaylistName(" ");
           alert("Playlist saved!");
           setNewList([]);
-          setPlaylistName("");
+          document.getElementById("playlist-name").value = "";
         }
       })
       .catch((error) => {
@@ -115,6 +124,7 @@ function App() {
               list={newList}
               onChangeName={changePlaylistName}
               onSave={savePlaylist}
+              onRemove={removeSong}
             />
           </div>
         </div>

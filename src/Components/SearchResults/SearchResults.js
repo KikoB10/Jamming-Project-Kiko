@@ -7,7 +7,12 @@ function SearchResults(props) {
     return (
       <div className="SearchResults">
         <h2>Results</h2>
-        <Tracklist tracks={props.searchResults} onAdd={props.onAdd} />
+        <Tracklist
+          tracks={props.searchResults}
+          onClick={props.onAdd}
+          btnAction="+"
+          inPlaylist={false}
+        />
       </div>
     );
   } else {
