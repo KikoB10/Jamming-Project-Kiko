@@ -3,12 +3,12 @@ import Tracklist from "../Tracklist/Tracklist";
 import "./Playlist.css";
 import spotifyLogo from "./spotify-logo-small.png";
 
-function Playlist() {
+function Playlist(props) {
   return (
     <div className="Playlist">
       <h2>Songs added</h2>
 
-      <Tracklist />
+      <Tracklist tracks={props.list} />
       <div className="Playlist-name">
         <input placeholder="Enter playlist name" />
       </div>

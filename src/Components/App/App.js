@@ -11,7 +11,9 @@ function App() {
   const [userName, setUserName] = useState("");
 
   const [searchResults, setSearchResults] = useState([]);
+  const [newList, setNewList] = useState([]);
 
+  //using useEffect to check for the accessToken on every render.
   useEffect(() => {
     const authenticated = Spotify.checkAuth();
     if (authenticated) {
@@ -28,10 +30,12 @@ function App() {
     }
   }, []);
 
+  //-----
   const loginHandler = () => {
     Spotify.getAuth();
   };
 
+  //-----
   const handleSearch = (searchInput) => {
     Spotify.searchTracks(searchInput)
       .then((tracksArray) => {
@@ -40,6 +44,13 @@ function App() {
       .catch((error) => {
         console.error("Error searching tracks", error);
       });
+  };
+
+  //--Adding songs
+
+  const addSong = (track) => {
+    setNewList((prev) => [...prev, track]);
+    console.log(newList);
   };
 
   if (!logged) {
@@ -78,8 +89,8 @@ function App() {
           <h2 className="userName">Hello! {userName}</h2>
           <SearchBar handleSearch={handleSearch} />
           <div className="App-playlist">
-            <SearchResults searchResults={searchResults} />
-            <Playlist />
+            <SearchResults searchResults={searchResults} onAdd={addSong} />
+            <Playlist list={newList} />
           </div>
         </div>
         <footer className="footer">

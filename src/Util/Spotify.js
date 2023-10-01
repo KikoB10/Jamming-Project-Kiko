@@ -1,10 +1,18 @@
-const CLIENT_ID =
+const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
+const CLIENT_SECRET = "727935eaec5946139c919d99b79a22f5";
+const REDIRECT_URI = "http://localhost:3002/";
+
 let accessToken;
 let userId;
 // let userImg;
 
 const Spotify = {
   //redirect user to Spotify Auth page when login button is clicked
+
+  //note for autorization: made the login button go here.
+  //base_url: 'https://accounts.spotify.com/authorize'
+  //response_type: 'token'
+  //scope: 'playlist-modify-public'
   getAuth() {
     const tokenURL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${REDIRECT_URI}`;
     window.location = tokenURL;

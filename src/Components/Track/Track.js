@@ -2,6 +2,11 @@ import React from "react";
 import "./Track.css";
 
 function Track(props) {
+  const handleAdd = (e) => {
+    console.log(`${props.track.name} add button clicked`);
+    props.onAdd(props.track);
+  };
+
   return (
     <div>
       <div className="track-container">
@@ -17,7 +22,9 @@ function Track(props) {
           </p>
         </div>
 
-        <button className="save-button">+</button>
+        <button className="save-button" onClick={handleAdd}>
+          +
+        </button>
       </div>
     </div>
   );

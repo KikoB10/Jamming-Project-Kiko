@@ -21,14 +21,14 @@
 }
 
 .Playlist input {
-  width: 75%;
+  
   padding: .5rem 3.5rem;
   color:#5680e9;
   border: 1px solid #f4f6f7;
   border-radius: 8px;
   text-align: center;
   font-size: 1rem;
-  margin-bottom: .5rem;
+  margin: .5rem;
   background-color:#f4f6f7;
   
 }
