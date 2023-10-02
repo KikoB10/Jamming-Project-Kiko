@@ -84,7 +84,7 @@ function App() {
   };
 
   const viewPlaylists = () => {
-    // Spotify.viewPlaylists();
+    Spotify.viewPlaylists();
     return console.log("viewPlaylist from spotify called");
   };
 
@@ -121,6 +121,7 @@ function App() {
           Kiko's Ja<span className="highlight">mmm</span>ing Project
         </h1>
         <div className="App">
+          {/* <img className="userImage" src={userImg} alt="user profile" /> */}
           <h2 className="userName">Hello! {userName}</h2>
           <SearchBar handleSearch={handleSearch} />
           <div className="App-playlist">

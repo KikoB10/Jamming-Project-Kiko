@@ -1,11 +1,11 @@
-// const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+
 const REDIRECT_URI = "http://localhost:3002/";
 
 let accessToken;
 
 let userId;
-// let userImg;
+let userImg;
 
 const Spotify = {
   //redirect user to Spotify Auth page when login button is clicked
@@ -59,6 +59,49 @@ const Spotify = {
       });
   },
 
+  async getUserId() {
+    const nameEndPoint = `https://api.spotify.com/v1/me`;
+    return fetch(nameEndPoint, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw new Error("Failed to fetch user data");
+        }
+      })
+      .then((data) => {
+        const userId = data.id;
+        // userImg = data.images[0];
+        return userId;
+      });
+  },
+
+  // async getUserImage() {
+  //   const nameEndPoint = `https://api.spotify.com/v1/me`;
+  //   return fetch(nameEndPoint, {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: `Bearer ${accessToken}`,
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (response.status === 200) {
+  //         return response.json();
+  //       } else {
+  //         throw new Error("Failed to fetch user data");
+  //       }
+  //     })
+  //     .then((data) => {
+  //       const userImg = data.images[0];
+  //       return userImg;
+  //     });
+  // },
+
   searchTracks(searchInput) {
     const searchEndPoint = `https://api.spotify.com/v1/search?q=${searchInput}&type=track`;
 
@@ -81,6 +124,26 @@ const Spotify = {
         }));
         console.log(trackResults);
         return trackResults;
+      });
+  },
+
+  async viewPlaylists() {
+    const viewPlaylistsURL = `https://api.spotify.com/v1/${userId}/playlists`;
+    return fetch(viewPlaylistsURL, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const playlistResults = data.items.map((playlist) => ({
+          name: playlist.name,
+          id: playlist.id,
+        }));
+        console.log(playlistResults);
+        return playlistResults;
       });
   },
 
@@ -126,9 +189,5 @@ const Spotify = {
           });
       });
   },
-
-  // async viewPlaylists() {
-  //   const viewPlaylistsURL = `https://api.spotify.com/v1/me/playlists`;
-  // },
 };
 export default Spotify;
