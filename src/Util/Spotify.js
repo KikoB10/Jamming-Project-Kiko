@@ -1,5 +1,5 @@
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-
+// const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_ID = "7cb903af5f2c4113a6c55565d61117a4";
 const REDIRECT_URI = "http://localhost:3002/";
 
 let accessToken;
@@ -22,7 +22,7 @@ const Spotify = {
   //Only run if a token is there
 
   checkAuth() {
-    const authenticated = window.location.href.match(/access_token=([^&]*)/);
+    const authenticated = window.location.href.match(/access_token=([^&]*)/); //will match anything other than & sign, and when there is an & it stops
     if (authenticated) {
       accessToken = authenticated[1];
       return true;
