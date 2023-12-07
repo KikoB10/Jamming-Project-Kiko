@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.2374498d.css",
-    "main.js": "/react-gh-pages/static/js/main.28516ad1.js",
-    "static/media/sky.jpg": "/react-gh-pages/static/media/sky.7b9375c1030f2d2a1d63.jpg",
-    "index.html": "/react-gh-pages/index.html",
-    "main.2374498d.css.map": "/react-gh-pages/static/css/main.2374498d.css.map",
-    "main.28516ad1.js.map": "/react-gh-pages/static/js/main.28516ad1.js.map"
+    "main.css": "/Jamming-Project-Kiko/static/css/main.a02b1f60.css",
+    "main.js": "/Jamming-Project-Kiko/static/js/main.28516ad1.js",
+    "static/media/sky.jpg": "/Jamming-Project-Kiko/static/media/sky.7b9375c1030f2d2a1d63.jpg",
+    "index.html": "/Jamming-Project-Kiko/index.html",
+    "main.a02b1f60.css.map": "/Jamming-Project-Kiko/static/css/main.a02b1f60.css.map",
+    "main.28516ad1.js.map": "/Jamming-Project-Kiko/static/js/main.28516ad1.js.map"
   },
   "entrypoints": [
-    "static/css/main.2374498d.css",
+    "static/css/main.a02b1f60.css",
     "static/js/main.28516ad1.js"
   ]
 }
